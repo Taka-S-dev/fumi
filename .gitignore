@@ -1,0 +1,28 @@
+# Allowlist: everything is ignored unless listed below by path.
+# A new kind of file has to be added here on purpose, so secrets, local notes
+# and work-in-progress folders are never committed by accident.
+*
+!*/
+
+!/.gitignore
+!/LICENSE
+!/README.md
+!/README.ja.md
+!/SETUP.md
+
+!/copilot/copilot-instructions.md
+!/copilot/hooks/fumi-hooks.json
+!/copilot/hooks/fumi-hook.ps1
+!/copilot/skills/*/SKILL.md
+!/copilot/skills/*/*.ps1
+
+# Re-deny secrets and local-only files even inside allowed paths.
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+id_rsa*
+secrets.*
+credentials.*
+*.bak-*
