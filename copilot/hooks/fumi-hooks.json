@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "hooks": {
+    "agentStop": [
+      {
+        "type": "command",
+        "powershell": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\.copilot\\hooks\\fumi-hook.ps1\" agentStop",
+        "bash": "pwsh -NoProfile -File \"$HOME/.copilot/hooks/fumi-hook.ps1\" agentStop",
+        "timeoutSec": 10
+      }
+    ],
+    "sessionEnd": [
+      {
+        "type": "command",
+        "powershell": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$env:USERPROFILE\\.copilot\\hooks\\fumi-hook.ps1\" sessionEnd",
+        "bash": "pwsh -NoProfile -File \"$HOME/.copilot/hooks/fumi-hook.ps1\" sessionEnd",
+        "timeoutSec": 10
+      }
+    ]
+  }
+}
